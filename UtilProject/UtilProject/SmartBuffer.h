@@ -31,7 +31,7 @@ public:
     //and if increase is true ,it will realloc the property buffer size
     //otherwist, return zero
     //Return if failed, return zero, or return size append
-	std::size_t append(char* data, std::size_t size, bool increase = true){
+	std::size_t append(const char* data, std::size_t size, bool increase = true){
 		std::size_t tail_size = _capacity - _length - (_data - _buffer);
 		std::size_t left_capacity = _capacity - _length;
 		if (size <= tail_size){ 
@@ -65,7 +65,7 @@ public:
 		return size;
 	}
 
-    std::size_t append(char* data){
+    std::size_t append(const char* data){
         return append(data, strlen(data));
     }
 
