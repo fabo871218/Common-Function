@@ -54,7 +54,9 @@ public:
 					memmove(_buffer, _data, _length);
 					_buffer = (char*)realloc(_buffer, _capacity + isize);
 					memcpy(_buffer + _length, data, size);
-					_data = _buffer; _length += size;
+					_data = _buffer; 
+                    _length += size;
+                    _capacity += isize;
 				}
 				else{
                     //If not auto increase buffer, return zero
